@@ -4,8 +4,11 @@ jobs:
   build:
     strategy:
       matrix:
-        node-v: [14, 16, 18]
+        node-v: [12, 14, 16]
         os: [ubuntu-latest, windows-latest]
+        include:
+          node-v: 18
+          os: ubuntu-latest
     runs-on: ${{matrix.os}}
     steps:
       - name: Get-Code
