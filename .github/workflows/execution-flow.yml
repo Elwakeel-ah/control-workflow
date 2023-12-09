@@ -79,6 +79,8 @@ jobs:
     needs: [lint, deploy]
     if: failure()
     runs-on: ubuntu-latest
-    run: |
-      echo "something went wrong"
-      echo "===================="
+    steps:
+      - name: report
+        run: |
+          echo "something went wrong"
+          echo "===================="
